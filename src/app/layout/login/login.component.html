@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <form [formGroup]="myForm" (ngSubmit)="submitForm()">
+    <div class="mb-3">
+      <label for="username" class="form-label">Nombre de usuario: </label>
+      <input formControlName="usuario"
+             [class.is-invalid]="myFormProps['usuario'].errors && myFormProps['usuario'].touched"
+             [class.is-valid]="!myFormProps['usuario'].invalid"
+             type="email" class="form-control" id="username" placeholder="name@example.com">
+      <div id="validationServerUsernameFeedback" class="invalid-feedback">
+        Nombre de usuario es requerido.
+      </div>
+
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Contraseña: </label>
+      <input formControlName="password"
+             [class.is-invalid]="myFormProps['password'].errors && myFormProps['password'].touched"
+             [class.is-valid]="!myFormProps['password'].invalid"
+             type="password" class="form-control" id="password"/>
+      <div id="validationServerPasswordFeedback" class="invalid-feedback">
+        Contraseña es requerida.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">
+      Ingresar
+      <fa-icon [icon]="faRightToBracket"></fa-icon>
+    </button>
+  </form>
+</div>

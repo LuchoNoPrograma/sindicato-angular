@@ -1,4 +1,2 @@
-<button class="btn btn-primary">It works ;D
-  &nbsp;
-  <fa-icon [icon]="faCoffee"></fa-icon>
-</button>
+<app-login *ngIf="!ingresarDashboard()"></app-login>
+<app-dashboard *ngIf="ingresarDashboard()"></app-dashboard>
