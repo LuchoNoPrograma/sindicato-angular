@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {faCoffee} from "@fortawesome/free-solid-svg-icons";
+import {AutenticacionService} from "./core/service/autenticacion.service";
 
 
 @Component({
@@ -10,4 +11,9 @@ import {faCoffee} from "@fortawesome/free-solid-svg-icons";
 export class AppComponent {
   title = 'sindicato-angular';
   protected readonly faCoffee = faCoffee;
+
+  constructor(private auth : AutenticacionService){}
+  public ingresarDashboard():boolean{
+    return this.auth.sesionActiva();
+  }
 }
